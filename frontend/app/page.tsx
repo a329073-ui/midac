@@ -1,4 +1,88 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import React from 'react';
+
+export default function HomePage() {
+  return (
+    <main style={styles.container}>
+      <header style={styles.header}>
+        <h1 style={styles.title}>MIDAC A.C Modelo integral de desarrollo comunitario</h1>
+        <p style={styles.subtitle}>
+          Interfaz de usuario para Midac — accede a tus herramientas y datos desde aquí.
+        </p>
+      </header>
+
+      <section style={styles.misionVision}>
+        <article style={styles.card}>
+          <h2>1.- MISIÓN</h2>
+          <p>
+            Ser una organización que contribuye al desarrollo integral de las comunidades de la región
+            centro sur del estado de Chihuahua.
+          </p>
+        </article>
+
+        <article style={styles.card}>
+          <h2>2.- VISIÓN</h2>
+          <p>
+            Apoyar a las comunidades a través de programas innovadores que formen vecinos propositivos,
+            proactivos y responsables.
+          </p>
+        </article>
+      </section>
+
+      <nav style={styles.nav}>
+        <ul style={styles.ul}>
+          <li style={styles.li}>
+            <Link href="/dashboard" style={styles.link}>
+              Dashboard
+            </Link>
+          </li>
+          <li style={styles.li}>
+            <Link href="/about" style={styles.link}>
+              Acerca de
+            </Link>
+          </li>
+          <li style={styles.li}>
+            <Link href="/login" style={styles.link}>
+              Iniciar sesión
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <footer style={styles.footer}>
+        <small>© {new Date().getFullYear()} MIDAC A.C</small>
+      </footer>
+    </main>
+  );
+}
+
+const styles: { [k: string]: React.CSSProperties } = {
+  container: {
+    padding: '2rem',
+    fontFamily:
+      'Inter, Roboto, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial',
+    color: '#111827',
+    maxWidth: 1000,
+    margin: '0 auto',
+  },
+  header: { marginBottom: '1.5rem' },
+  title: { fontSize: '1.75rem', margin: 0 },
+  subtitle: { marginTop: '0.5rem', color: '#6b7280' },
+  nav: { margin: '1rem 0' },
+  ul: { display: 'flex', gap: '1rem', listStyle: 'none', padding: 0, margin: 0 },
+  li: {},
+  link: { color: '#2563eb', textDecoration: 'none' },
+  misionVision: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '1rem',
+    marginTop: '1rem',
+  },
+  card: { padding: '1rem', border: '1px solid #e5e7eb', borderRadius: 8, background: '#fff' },
+  footer: { marginTop: '2rem', color: '#6b7280' },
+};import Image from "next/image";
 
 export default function Home() {
   return (
